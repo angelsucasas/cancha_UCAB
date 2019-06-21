@@ -70,3 +70,43 @@ INSERT INTO UNIDAD_DE_ESTUDIO (DESCRIPCION_UDE,NOMBRE_UDE,FK_POB) VALUES ('SIA M
 INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (3,'Pablo Maceri','pablo@maceri.com','12456',1);
 INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (4,'Ramón Garcia-Martinez','ramon@garcia,com','123',2);
 
+
+
+
+INSERT INTO Investigacion (enunciado_inv) VALUES('Diseño e implementación de un sistema WEB para el control de asistencias de profesores, preparadores y ayudantes de cátedra de la UCAB vía RFID');
+INSERT INTO PREGUNTA_DE_INVESTIGACION (PREGUNTA_PDI,FK_INV) VALUES ('¿Cómo se llevan a cabo el control de asistencias en la UCAB actualmente?',3);
+INSERT INTO TIPO_DE_INVESTIGACION (NOMBRE_TDI,DESCRIPCION_TDI,FK_PDI) VALUES ('PROYECTIVA','ES UNA INVESTIGACION PROYECTIVA',3);
+INSERT INTO OBJETIVO_GENERAL (DESCRIPCION_OG,NIVEL_OG,FK_TDI) VALUES('Diseñar desarrollar e implementar un sistema web para el control de asistencias de profesores preparadores y ayudantes de cátedra utilizando RFID.',1,1);
+INSERT INTO INSTRUMENTO (NOMBRE_INS,DESCRIPCION_INS) VALUES ('Experimental ','Al implementar el sistema dependerá de profesores y estudiantes su uso');
+INSERT INTO CONTEXTO (NOMBRE_CON,DESCRIPCION_CON) VALUES ('Control de asistencias','Control de asistencia de la UCAB');
+INSERT INTO FUENTE (DESCRIPCION_FUE,FK_INS)VALUES ('¿que son las bases de datos? (2007) Damian,P.',3),
+												  ('Arquitectura Modelo/Vista/Controlador (2007) Catalani, E.',3);
+INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS) VALUES ('Control de asistencia','control de asistencias por parte de profesores, preparadores y ayudantes de catedra',3);
+INSERT INTO ESTADIO (DESCRIPCION_EST,RECORRIDO_EST,FK_OE) VALUES (' Se estima la efectividad del sistema de control que ya está funcionando','Evaluativo',3);
+INSERT INTO OBJETIVO_ESPECIFICO (DESCRIPCION_OE,FK_OG) VALUES ('evaluar el tipo de etiqueta y antena RFID, la frecuencia de transmisión, así como el entorno en el que operará el sistema de control de asistencia.',3),
+															  ('Implementar el uso de etiquetas RFID de acuerdo a la evaluación mencionada anteriormente.',3),
+															  ('Estudiar los distintos aspectos relacionados con la seguridad del sistema RFID.',3),
+															  ('Implementar el nivel de seguridad que se utilizara en el sistema para el envío y recepción de dados vía RFID.',3),
+															  ('Construir el dispositivo receptor del sistema RFID',3),
+															  ('Diseñar e implementar un modelo de base de datos que contenga la información de los preparadores y ayudantes de catedra y los profesores de la UCAB.',3),
+															  ('Desarrollar una aplicación Web que gestione el control de asistencia de los profesores preparadores y ayudantes de catedra de la UCAB basados en los datos obtenidos mediante el uso del sistema RFID diseñado.',3),
+															  ('Desarrollar un módulo de reportes en la aplicación Web para la visualización de las asistencias de los profesores, preparadores y ayudantes de catedra.',3);
+INSERT INTO MUESTRA (DESCRIPCION_MUE) VALUES ('Profesores, preparadores y ayudantes de catedra de la UCAB de la escuela de ingeniería en informática de la UCAB.');
+INSERT INTO TECNICA_DE_MUESTREO (DESCRIPCION_TDM,FK_MUE) VALUES ('Sistema RFID',3);
+INSERT INTO POBLACION (DESCRIPCION_POB,FK_TDM) VALUES ('Profesores, preparadores y ayudantes de catedra de la UCAB',3);
+INSERT INTO UNIDAD_DE_ESTUDIO (DESCRIPCION_UDE,NOMBRE_UDE,FK_POB) VALUES ('Sistema de control de asistencia usado por los profesores','Sistema de control de asistencia',3);
+INSERT INTO SINERGIA (NOMBRE_SIN,DESCRIPCION_SIN,FK_EDE,FK_UDE) VALUES ('análisis de requerimientos.', 'Se analiza las necesidades de los profesores y preparadores',3,3),
+																	   ('diseño.', 'Se genera el diseño optimo de la aplicacion',3,3),
+																	   ('codificación', 'Se procede con la codificacion de los requerimientos funcionales',3,3),
+																	   ('prueba', 'Se realizan pruebas entre un grupo de profesores',3,3);
+INSERT INTO INDICIO (NOMBRE_IND,DESCRIPCION_IND,FK_SIN) VALUES ('evaluación de antena RFID.','Se verifica la antena RFID',1),
+															   ('comunicación entre receptor RF y la base de datos.','se relaizan pruebas entre el receptor RFID y la base de datos',15),
+															   ('definición de requerimientos.','Se determinan los requerimientos',15),
+															   ('realización de los casos de uso y actores del sistema.','Se generan los diagramas uml necesarios para el diseño',15),
+															   ('definición del modelo funcional.','Se genera el modelo funcional a partir de modelos UML',16),
+															   ('arquitectura del receptor RFID.','Se toma en cuenta la arquitectura del receptor RFID para su implementacion en el diseño',16),
+															   ('arquitectura de la aplicación web.','Se genera la arquitectura que debera tener la aplicacion teniendo en cuenta las consideraciones anteriores',16),
+                                                               ('modelo de datos.','Se determinan los modelso de datos pertinentes',16),
+															   ('análisis de estándares de codificación.','Se toman en cuenta los estandares de codificacion ya existentes',17);
+INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (5,'Elias Hiba','ELIAS@HIBA.COM','12456',1);
+INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (6,'Wilmer Pereira','WILMER@PEREIRA.COM','12456',2);
