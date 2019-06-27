@@ -200,7 +200,8 @@ INSERT INTO PDI_CON (FK_PDI, FK_CON) VALUES (3, 3);
 
 INSERT INTO CATEGORIA (NOMBRE_CAT) VALUES ('CONCEPTUAL'),
 										  ('TEORICO'),
-										  ('REEFERENCIAL');
+										  ('REEFERENCIAL'),
+										  ('CONTEXTUAL');
 											
 
 ----------------------UNIDAD DE INFORMACION-------------------------------------------------------------
@@ -223,6 +224,18 @@ INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,REFERENCIA_UDI,UBICACION_UDI,JUSTIFI
 								  ('La tecnología de la conectividad JINITM está basada en un concepto sencillo: los dispositivos deben trabajar en conjunto. Deben interconectarse sin problema. Sin drivers, ni problemas con sistemas operativos, ni cables o conectores extraños. No, obstante la tecnología ofrece  nuevos e interesantes conceptos y capacidades', '[Sun Microsystem, 2000]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JINI', 3, 3, 2),
 								  ('La comunicación entre servicios es llevada a cabo usando la invocación de métodos remotos de Java (RMI). El mecanismo que soporta la comunicación entre los servicios no es por sí mismo un recurso que es encontrado y usado, sino que este es una parte de la infraestructura de la tecnología JINI.', '[Sun Microsystem, 2000]', 'DISPONIBLE EN LINEA','NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JINI', 3, 3, 2),
 								  ('El diseño del modelo de seguridad para la tecnología JINI es construido a partir de la doble noción de un director y una lista de control de acceso.', '[Sun Microsystem, 2000]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA EL USO DE JINI', 3, 3, 2);
+
+INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,REFERENCIA_UDI,UBICACION_UDI,JUSTIFICACION_UDI,FK_EDE,FK_PDI,FK_CAT) VALUES
+									('Un sistema inteligente autónomo ha sido definido  como aquél que puede descubrir y registrar si una acción hecha en una situación dada fue favorable.', '[Fritz y otros, 1989; 1990; García Martínez y Borrajo, 1996]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA EL ENTENDIMIENTO DEL SIA', 4 , 2 , 1 ),
+									('Tal modelo es parcial pero tiene la consistencia suficiente como para ser utilizado por su carácter predictivo en procesos de planificación suficiente', '[García Martínez, 1993a; 1993b; 1995], [García Martínez, 1996; 1997a; García Martínez et al., 1998a; 1998b; García Martínez et al., 1999a; 1999b]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA EL MARCO TEORICO', 3, 2, 2),
+									('En este contexto, el propósito de este proyecto es estudiar de que manera la interacción entre sistemas inteligentes autónomos mejora el modelo de funcionamiento del entorno que cada sistema va formando y cómo se integran en dicha interacción los modelos de refuerzo.', '[Sutton, 1984]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA COMPRENDER LA INTERACCION ENTRE SISTEMAS INTELIGENTES', 3, 2, 2),
+									('Un problema consiste de un estado inicial y una expresión objetivo. Para resolver un problema, el sistema PRODIGY debe encontrar una secuencia de operadores que, si se aplican a un estado inicial, produce un estado final satisfaciendo la expresión objetivo.', '[Carbonell y otros, 1991]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JIN', 3, 2, 2),
+									('El programa ESTATICO produce reglas de control sin utilizar ningún ejemplo de entrenamiento.', '[Etzioni, 1991]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA EL USO DE REGLAS DE CONTROL', 3, 2, 1),
+									('LIVE es una arquitectura implementada para aprender del entorno.', '[Shen, 1991]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA ENTENDER EL USO DE LA ARQUITECTURA LIVE', 3, 2, 1),
+									('¿Cuál es la repetibilidad de los resultados de trabajos previos en la teoría de sistemas inteligentes autónomos al cambiar de plataforma robot (migrar de la plataforma a Khepera)?', '[García Martinez y Borrajo, 1997;1998], [Fritz et al., 1989]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA MEDIR REPETIBILIDAD', 3, 2, 4),
+									('En trabajos previos en la teoría de sistemas inteligentes autónomos se realizan experimentos similares en los que se grafican la cantidad de situación y de teorías a lo largo del tiempo y se comparan distintos métodos de aprendizaje a través del análisis del porcentaje de planes exitosos a lo largo del tiempo ', '[García Martinez y Borrajo, 1997;1998]', 'DISPONIBLE EN LINEA', 'NECESARIO ENTENDER LA TEORIA DE SISTEMAS INTELIGENTES AUTONOMOS', 3, 2, 3);
+
+
 
 
 
