@@ -217,8 +217,12 @@ INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,REFERENCIA_UDI,UBICACION_UDI,JUSTIFI
 									Integración con otros sistemas, lo que implica que comparten funcionalidad y / o datos. 
 									Disonancia conceptual (modelo de datos con distintas visiones), debido a que poseen un modelo de negocio subyacente que abarca distintos aspectos de un área de negocio. Por lo tanto prestan distintas funcionalidades a distintos tipos de usuarios. 
 									Lógica de negocio, lo que implica procesamiento de datos.','[Rod Johnson, 2003], [Martin Fowler, 2003], [Marinescu 2002]','DISPONIBLE EN LINEA','NECESARIA PARA LA DEFINICION DE CARACTERISTICAS',1,1,1);
-
-
+INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,REFERENCIA_UDI,UBICACION_UDI,JUSTIFICACION_UDI,FK_EDE,FK_PDI,FK_CAT) VALUES
+								  ('El paso de objetos por valor se revela como una de las características que diferencia RMI de las otras tecnologías de programación distribuida. Esta potente posibilidad se basa el uso del concepto de “socialización” para el paso de objetos a través de la red. Objetos todo tipo, tanto nativos JAVA como definidos por el usuario, pueden ser transferidos totalmente transparente al programador usando esta técnica.', '[Carlos Beltran, 1998-1999]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA EL ENTENDIMIENTO DEL RMI', 3, 3 ,2 ),
+								  ('Las interfaces definen el comportamiento y las clases definen la implementación', '[Carlos Beltran, 1998-1999]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA EL MARCO TEORICO', 3, 3, 2),
+								  ('La tecnología de la conectividad JINITM está basada en un concepto sencillo: los dispositivos deben trabajar en conjunto. Deben interconectarse sin problema. Sin drivers, ni problemas con sistemas operativos, ni cables o conectores extraños. No, obstante la tecnología ofrece  nuevos e interesantes conceptos y capacidades', '[Sun Microsystem, 2000]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JINI', 3, 3, 2),
+								  ('La comunicación entre servicios es llevada a cabo usando la invocación de métodos remotos de Java (RMI). El mecanismo que soporta la comunicación entre los servicios no es por sí mismo un recurso que es encontrado y usado, sino que este es una parte de la infraestructura de la tecnología JINI.', '[Sun Microsystem, 2000]', 'DISPONIBLE EN LINEA','NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JINI', 3, 3, 2),
+								  ('El diseño del modelo de seguridad para la tecnología JINI es construido a partir de la doble noción de un director y una lista de control de acceso.', '[Sun Microsystem, 2000]', 'DISPONIBLE EN LINEA', 'NECESARIO PARA EL USO DE JINI', 3, 3, 2);
 
 
 
