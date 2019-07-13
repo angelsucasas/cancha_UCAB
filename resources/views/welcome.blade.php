@@ -46,7 +46,7 @@
                             <a href="#contact" class="nav-link">Contacto</a>
                         </li>
                     </ul>
-                    <button href="#" class="btn btn-info navbar-btn">Ingresar</button>
+                    <a href="{{route('login')}}" class="btn btn-info navbar-btn">Ingresar</a>
                 </div>
             </div>
         </nav>
