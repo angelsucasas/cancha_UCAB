@@ -34,27 +34,23 @@
                                     <p class="text-muted mb-4 mt-3">Todavia no tienes cuenta? Crea tu cuenta, toma menos de un minuto</p>
                                 </div>
 
-                                <form action="#">
+                               <form method="POST" action="{{ route('register') }}">
+                                    {{ csrf_field() }}
 
                                     <div class="form-group">
                                         <label for="fullname">Nombre Completo</label>
-                                        <input class="form-control" type="text" id="fullname" placeholder="Ingresa tu nombre" required>
+                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus placeholder="Ej: Ucab">
                                     </div>
                                     <div class="form-group">
                                         <label for="emailaddress">Correo Electronico</label>
-                                        <input class="form-control" type="email" id="emailaddress" required placeholder="Ingresa tu correo">
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Ej: investigaucab@gmail.com">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Contraseña</label>
-                                        <input class="form-control" type="password" required id="password" placeholder="Ingresa tu contraseña">
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="checkbox-signup">
-                                            <label class="custom-control-label" for="checkbox-signup">Acepto <a href="javascript: void(0);" class="text-dark">los terminos y condiciones</a></label>
-                                        </div>
+                                        <input id="password" type="password" class="form-control" name="password" required autofocus placeholder="Contraseña">
                                     </div>
                                     <div class="form-group mb-0 text-center">
+                                    
                                         <button class="btn btn-success btn-block" type="submit"> Ingresar </button>
                                     </div>
 

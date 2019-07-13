@@ -34,16 +34,16 @@
                                     <p class="text-muted mb-4 mt-3">Ingresa tu correo y tu contraseña para ingresar al panel administrativo.</p>
                                 </div>
 
-                                <form action="#">
-
+                                <form action="POST" action="{{ route('login') }}">
+                                    {{ csrf_field() }}
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Correo</label>
-                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Ingresa tu correo">
+                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Ej: investigaucab@gmail.com">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <label for="password">Contraseña</label>
-                                        <input class="form-control" type="password" required="" id="password" placeholder="Ingresa tu contraseña">
+                                        <input id="password" type="password" class="form-control" name="password" required placeholder="Ingresa contraseña">
                                     </div>
 
                                     <div class="form-group mb-3">
