@@ -35,19 +35,35 @@
                                 </div>
 
                                <form method="POST" action="{{ route('register') }}">
-                                    {{ csrf_field() }}
+                                    @csrf
 
                                     <div class="form-group">
                                         <label for="fullname">Nombre Completo</label>
-                                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus placeholder="Ej: Ucab">
+                                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Ej: ucab">
+                                            @if ($errors->has('name'))
+                                            <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                            @endif
                                     </div>
+                                    
                                     <div class="form-group">
                                         <label for="emailaddress">Correo Electronico</label>
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Ej: investigaucab@gmail.com">
+                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="investigaucab@gmail.com">
+                                        @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Contraseña</label>
-                                        <input id="password" type="password" class="form-control" name="password" required autofocus placeholder="Contraseña">
+                                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required autocomplete="new-password">
+                                        @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                        @endif
                                     </div>
                                     <div class="form-group mb-0 text-center">
                                     
