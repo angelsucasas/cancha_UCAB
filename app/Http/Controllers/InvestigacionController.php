@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Investigacion;
 
+use App\PreguntaDeInvestigacion;
+
 class InvestigacionController extends Controller
 {
 
@@ -18,14 +20,21 @@ class InvestigacionController extends Controller
     public function index()
     {
         $investigaciones = Investigacion::all();
-        return view('investigacion.index', compact('investigaciones'));
+        $pdis = PreguntaDeInvestigacion::all();
+        return view('investigacion.index', compact('investigaciones','pdis'));
     }
 
     public function detail($cod_inv){
         
         $investigacion = Investigacion::findOrFail($cod_inv);
 
-        return view('investigacion.detail', compact('investigacion'));
+        $pdi = $investigacion->preguntaDeInvestigacions->first()->pregunta_pdi;
+
+        //dd($pdi);
+
+        //$pdi = Investigacion::find(1)->preguntaDeInvestigacions;
+        //$pdi = $investigacion->preguntaDeInvestigacions($cod_inv)->pregunta_pdi;
+        return view('investigacion.detail', compact('investigacion', 'pdi'));
     }
 
     /**
@@ -38,8 +47,14 @@ class InvestigacionController extends Controller
     public function crear(Request $request){
         $investigacion = new Investigacion;
         $investigacion->enunciado_inv = $request->enunciado_inv;
-
+    
         $investigacion->save();
+
+        $pdi = new PreguntaDeInvestigacion;
+        $pdi->pregunta_pdi = $request->pregunta_pdi;
+        $pdi->fk_inv = $investigacion->cod_inv;
+
+        $pdi->save();
 
         return back()->with('mensaje', 'Investigacion Agregada!');
     }

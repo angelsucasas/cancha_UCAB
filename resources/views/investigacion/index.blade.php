@@ -22,6 +22,8 @@
             placeholder="Enunciado"
             class="form-control mb-2"
           />
+          <input type="text" name="pregunta_pdi" placeholder="Pregunta de investigacion" class="form-control mb-2">
+          
           <button class="btn btn-primary btn-block" type="submit">Agregar</button>
         </form>        
             <table class="table">
@@ -44,6 +46,31 @@
               @endforeach()
             </tbody>
         </table>
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#Cod_PDI</th>
+                <th scope="col">Pregunta_PDI</th>
+                <th scope="col">Fk_inv</th>
+                </tr>
+            </thead>
+            <tbody>
+              @foreach($pdis as $pdi)
+                <tr>
+                <th scope="row">
+                <!--<a href="{{route('investigacion.detail', $investigacion)}}">-->
+                  {{$pdi->cod_pdi}}
+                </a>
+                </th>
+                <td>{{$pdi->pregunta_pdi}}</td>
+                </tr>
+                </th>
+                <td>{{$pdi->fk_inv}}</td>
+                </tr>
+              @endforeach()
+            </tbody>
+        </table>
+
     </div>
 
     <!-- Optional JavaScript -->
