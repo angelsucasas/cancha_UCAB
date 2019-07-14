@@ -28,13 +28,14 @@ class Investigacion extends Model
     /**
      * @var array
      */
-    protected $fillable = ['enunciado_inv'];
-
+    //protected $fillable = ['enunciado_inv'];
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function preguntaDeInvestigacions()
     {
+        //return $this->belongsTo(Example::class, 'Id_Exampe');
         return $this->hasMany('App\PreguntaDeInvestigacion', 'fk_inv', 'cod_inv');
     }
 }
