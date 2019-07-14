@@ -56,19 +56,20 @@
                                 <span>Opciones</span>
                             </a>
 
-                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-divider">
+                            </div>
 
                             <!-- item-->
-                            <a href="{{Route('logout')}}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" class="dropdown-item notify-item">
+                            <a class="dropdown-item notify-item" href="{{ route('logout') }}"onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
                             <i class="fe-log-out"></i>
                             <span>Desconectarse</span>
                             </a>
-
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                            </form>
                         </div>
                     </li>
-
-                    
 
 
                 </ul>
@@ -138,7 +139,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title"> s @yield('nombre-seccion')</h4>
+                                    <h4 class="page-title"> DASHBOARD</h4>
                                 </div>
                             </div>
                         </div>     
