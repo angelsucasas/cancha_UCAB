@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $cod_ede
  * @property int $fk_ins
- * @property int $fk_udi
  * @property string $nombre_ede
  * @property string $descripcion_ede
  * @property Instrumento $instrumento
- * @property UnidadDeInformacion $unidadDeInformacion
  * @property EdePdi[] $edePdis
  * @property Sinergium[] $sinergias
  * @property Temporalidad[] $temporalidads
@@ -36,7 +34,7 @@ class EventoDeEstudio extends Model
     /**
      * @var array
      */
-    protected $fillable = ['fk_ins', 'fk_udi', 'nombre_ede', 'descripcion_ede'];
+    protected $fillable = ['fk_ins', 'nombre_ede', 'descripcion_ede'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -44,14 +42,6 @@ class EventoDeEstudio extends Model
     public function instrumento()
     {
         return $this->belongsTo('App\Instrumento', 'fk_ins', 'cod_ins');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function unidadDeInformacion()
-    {
-        return $this->belongsTo('App\UnidadDeInformacion', 'fk_udi', 'cod_udi');
     }
 
     /**

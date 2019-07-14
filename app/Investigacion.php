@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $cod_inv
+ * @property int $fk_use
  * @property string $enunciado_inv
+ * @property User $user
  * @property PreguntaDeInvestigacion[] $preguntaDeInvestigacions
  */
 class Investigacion extends Model
@@ -28,14 +30,21 @@ class Investigacion extends Model
     /**
      * @var array
      */
-    //protected $fillable = ['enunciado_inv'];
-    public $timestamps = false;
+    protected $fillable = ['fk_use', 'enunciado_inv'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'fk_use');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function preguntaDeInvestigacions()
     {
-        //return $this->belongsTo(Example::class, 'Id_Exampe');
         return $this->hasMany('App\PreguntaDeInvestigacion', 'fk_inv', 'cod_inv');
     }
 }
