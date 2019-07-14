@@ -16,6 +16,7 @@ class CreateInvestigacionTable extends Migration {
 		{
 			$table->integer('cod_inv', true);
 			$table->string('enunciado_inv', 250);
+			$table->integer('fk_use')->nullable();
 		});
 	}
 
