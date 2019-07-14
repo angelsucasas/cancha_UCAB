@@ -31,6 +31,7 @@ class Estadio extends Model
      * @var array
      */
     protected $fillable = ['fk_oe', 'descripcion_est', 'recorrido_est'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

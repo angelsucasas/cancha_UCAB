@@ -31,6 +31,7 @@ class TecnicaDeMuestreo extends Model
      * @var array
      */
     protected $fillable = ['fk_mue', 'descripcion_tdm'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

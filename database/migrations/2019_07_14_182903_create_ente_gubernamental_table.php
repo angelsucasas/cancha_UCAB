@@ -16,7 +16,7 @@ class CreateEnteGubernamentalTable extends Migration {
 		{
 			$table->integer('cod_eg', true);
 			$table->string('descripcion_eg', 250)->nullable();
-			$table->integer('fk_usu')->nullable();
+			$table->integer('fk_use')->nullable();
 		});
 	}
 

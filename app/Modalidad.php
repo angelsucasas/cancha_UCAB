@@ -30,6 +30,7 @@ class Modalidad extends Model
      * @var array
      */
     protected $fillable = ['descripcion_mod'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

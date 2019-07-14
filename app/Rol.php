@@ -31,6 +31,7 @@ class Rol extends Model
      * @var array
      */
     protected $fillable = ['nombre_rol', 'descripcion_rol'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

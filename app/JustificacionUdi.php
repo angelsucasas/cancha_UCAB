@@ -29,7 +29,7 @@ class JustificacionUdi extends Model
      * @var array
      */
     protected $fillable = ['descripcion_jus'];
-
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

@@ -18,7 +18,6 @@ class CreateEventoDeEstudioTable extends Migration {
 			$table->string('nombre_ede', 150);
 			$table->string('descripcion_ede', 250);
 			$table->integer('fk_ins')->nullable();
-			$table->integer('fk_udi')->nullable();
 		});
 	}
 

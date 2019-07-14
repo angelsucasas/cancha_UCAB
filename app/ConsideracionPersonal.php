@@ -34,6 +34,7 @@ class ConsideracionPersonal extends Model
     /**
      * @var array
      */
+
     //protected $fillable = ['fk_pdi', 'relacion_tema_expectativa', 'interes_del_investigador_cp', 'estudios_previos_cp', 'acceso_informacion_cp', 'tiempo_recursos_cp', 'asesoria_orientacion_cp'];
     public $timestamps = false;
     /**

@@ -31,6 +31,7 @@ class Instrumento extends Model
      * @var array
      */
     protected $fillable = ['nombre_ins', 'descripcion_ins'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

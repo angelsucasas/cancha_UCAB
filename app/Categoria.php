@@ -29,6 +29,7 @@ class Categoria extends Model
      * @var array
      */
     protected $fillable = ['nombre_cat'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

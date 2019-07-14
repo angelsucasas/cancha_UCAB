@@ -30,6 +30,7 @@ class Permiso extends Model
      * @var array
      */
     protected $fillable = ['nombre_per', 'descripcion_per'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

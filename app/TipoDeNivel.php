@@ -31,6 +31,7 @@ class TipoDeNivel extends Model
      * @var array
      */
     protected $fillable = ['fk_tdi', 'fk_ndi'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

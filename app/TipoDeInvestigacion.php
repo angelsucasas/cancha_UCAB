@@ -36,6 +36,7 @@ class TipoDeInvestigacion extends Model
      * @var array
      */
     protected $fillable = ['fk_pdi', 'fk_udi', 'nombre_tdi', 'descripcion_tdi'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

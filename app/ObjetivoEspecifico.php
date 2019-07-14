@@ -33,6 +33,7 @@ class ObjetivoEspecifico extends Model
      * @var array
      */
     protected $fillable = ['fk_og', 'descripcion_oe'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

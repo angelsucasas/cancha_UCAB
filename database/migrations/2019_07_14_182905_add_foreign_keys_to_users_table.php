@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddForeignKeysToUsuarioTable extends Migration {
+class AddForeignKeysToUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class AddForeignKeysToUsuarioTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('usuario', function(Blueprint $table)
+		Schema::table('users', function(Blueprint $table)
 		{
 			$table->foreign('fk_rol', 'fk_rol')->references('cod_rol')->on('rol')->onUpdate('RESTRICT')->onDelete('RESTRICT');
 		});
@@ -26,7 +26,7 @@ class AddForeignKeysToUsuarioTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('usuario', function(Blueprint $table)
+		Schema::table('users', function(Blueprint $table)
 		{
 			$table->dropForeign('fk_rol');
 		});

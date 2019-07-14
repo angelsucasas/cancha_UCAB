@@ -29,6 +29,7 @@ class TipoDeModalidad extends Model
      * @var array
      */
     protected $fillable = ['fk_mod'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

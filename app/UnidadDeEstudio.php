@@ -34,7 +34,7 @@ class UnidadDeEstudio extends Model
      * @var array
      */
     protected $fillable = ['fk_pob', 'fk_udi', 'descripcion_ude', 'nombre_ude'];
-
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

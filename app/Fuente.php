@@ -30,6 +30,7 @@ class Fuente extends Model
      * @var array
      */
     protected $fillable = ['fk_ins', 'descripcion_fue'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -31,6 +31,7 @@ class OePdi extends Model
      * @var array
      */
     protected $fillable = ['fk_oe', 'fk_pdi'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

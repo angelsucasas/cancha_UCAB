@@ -29,6 +29,7 @@ class Muestra extends Model
      * @var array
      */
     protected $fillable = ['descripcion_mue'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

@@ -5,11 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Investigacion;
-
 use App\PreguntaDeInvestigacion;
-
 use App\ConsideracionPersonal;
-
 use App\ConsideracionSocial;
 
 class InvestigacionController extends Controller
@@ -24,12 +21,10 @@ class InvestigacionController extends Controller
     public function index()
     {
         $investigaciones = Investigacion::all();
-        $pdis = PreguntaDeInvestigacion::all();
-        return view('investigacion.index', compact('investigaciones','pdis'));
+        return view('investigacion.index', compact('investigaciones'));
     }
 
     public function detail($cod_inv){
-        
         $investigacion = Investigacion::findOrFail($cod_inv);
 
         $pdi = $investigacion->preguntaDeInvestigacions->first()->pregunta_pdi;
@@ -49,14 +44,8 @@ class InvestigacionController extends Controller
     public function crear(Request $request){
         $investigacion = new Investigacion;
         $investigacion->enunciado_inv = $request->enunciado_inv;
-    
+
         $investigacion->save();
-
-        $pdi = new PreguntaDeInvestigacion;
-        $pdi->pregunta_pdi = $request->pregunta_pdi;
-        $pdi->fk_inv = $investigacion->cod_inv;
-
-        $pdi->save();
 
         $consideracionp = new ConsideracionPersonal;
         $consideracionp->relacion_tema_expectativa = $request->relacion_tema_expectativa;

@@ -33,6 +33,7 @@ class ConsideracionSocial extends Model
      * @var array
      */
     protected $fillable = ['fk_pdi', 'aporte_nuevos_conocimiento_cs', 'aplicacion_area_cs', 'responde_necesidad_cs', 'impulsa_investigaciones_cs'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

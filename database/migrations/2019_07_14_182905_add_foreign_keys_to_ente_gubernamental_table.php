@@ -14,7 +14,7 @@ class AddForeignKeysToEnteGubernamentalTable extends Migration {
 	{
 		Schema::table('ente_gubernamental', function(Blueprint $table)
 		{
-			$table->foreign('fk_usu', 'fk_usu')->references('cod_usu')->on('usuario')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+			$table->foreign('fk_use', 'fk_usu')->references('id')->on('users')->onUpdate('RESTRICT')->onDelete('RESTRICT');
 		});
 	}
 

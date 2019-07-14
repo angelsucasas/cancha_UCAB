@@ -31,6 +31,7 @@ class Factibilidad extends Model
      * @var array
      */
     protected $fillable = ['fk_pdi', 'descripcion_fac', 'nivel_fac'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

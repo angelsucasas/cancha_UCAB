@@ -32,6 +32,7 @@ class ObjetivoGeneral extends Model
      * @var array
      */
     protected $fillable = ['fk_tdi', 'descripcion_og', 'nivel_og'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

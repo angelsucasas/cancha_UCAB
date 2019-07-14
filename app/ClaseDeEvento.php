@@ -30,6 +30,7 @@ class ClaseDeEvento extends Model
      * @var array
      */
     protected $fillable = ['fk_oe', 'nombre_cde'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

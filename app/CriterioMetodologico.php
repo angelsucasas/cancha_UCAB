@@ -35,6 +35,7 @@ class CriterioMetodologico extends Model
      * @var array
      */
     protected $fillable = ['fk_pdi', 'fk_udi', 'descripcion_cm', 'estudio_previo_cm', 'abordaje_cm', 'poblacion_accesible_cm'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

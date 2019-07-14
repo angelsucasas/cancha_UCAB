@@ -46,6 +46,7 @@ class UnidadDeInformacion extends Model
      * @var array
      */
     protected $fillable = ['fk_ede', 'fk_pdi', 'fk_cat', 'fk_ref', 'fk_ubi', 'fk_jus', 'cita_udi'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

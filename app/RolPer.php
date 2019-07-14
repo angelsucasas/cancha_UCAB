@@ -31,6 +31,7 @@ class RolPer extends Model
      * @var array
      */
     protected $fillable = ['fk_rol', 'fk_per'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
