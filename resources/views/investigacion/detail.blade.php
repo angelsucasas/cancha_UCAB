@@ -15,7 +15,8 @@
     <hr>
     <h4>Cod_inv: {{ $investigacion->cod_inv }}</h4>
     <h4>Enunciado: {{ $investigacion->enunciado_inv }}</h4>
-
+    <h4>Pregunta: {{ $pdi }}</h4>
+    <h4>Interes: {{ $consideracionp }}</h4>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
