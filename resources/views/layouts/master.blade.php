@@ -59,7 +59,7 @@
                             <div class="dropdown-divider"></div>
 
                             <!-- item-->
-                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a href="{{Route('logout')}}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="dropdown-item notify-item">
                             <i class="fe-log-out"></i>
                             <span>Desconectarse</span>
