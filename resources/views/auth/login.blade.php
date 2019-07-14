@@ -34,27 +34,42 @@
                                     <p class="text-muted mb-4 mt-3">Ingresa tu correo y tu contraseña para ingresar al panel administrativo.</p>
                                 </div>
 
-                                <form action="POST" action="{{ route('login') }}">
-                                    {{ csrf_field() }}
+                                <form method="POST" action="{{ route('login') }}">
+                                @csrf
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Correo</label>
-                                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus placeholder="Ej: investigaucab@gmail.com">
+                                        <!--<input id="email" type="email" class="form-control" name="email" value="{ old('email') }" required autofocus placeholder="Ej: investigaucab@gmail.com">-->
+                                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                @endif
+                                    
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <label for="password">Contraseña</label>
-                                        <input id="password" type="password" class="form-control" name="password" required placeholder="Ingresa contraseña">
+                                        <!--<input id="password" type="password" class="form-control" name="password" required placeholder="Ingresa contraseña">-->
+                                        <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required autocomplete="current-password">
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked>
+                                           <input type="checkbox" class="custom-control-input" id="checkbox-signin" checked {{ old('remember') ? 'checked' : '' }}>
                                             <label class="custom-control-label" for="checkbox-signin">Recordarme</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-primary btn-block" type="submit"> Ingresar </button>
+                                        <button class="btn btn-primary btn-block" type="submit"> Ingresar
+                                        {{ __('Login') }}
+                                        </button>
                                     </div>
 
                                 </form>
