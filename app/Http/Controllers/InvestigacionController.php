@@ -47,6 +47,11 @@ class InvestigacionController extends Controller
 
         $investigacion->save();
 
+        $pdi = new PreguntaDeInvestigacion;
+        $pdi->pregunta_pdi = $request->pregunta_pdi;
+        $pdi->fk_inv = $investigacion->cod_inv;
+        $pdi->save();
+
         $consideracionp = new ConsideracionPersonal;
         $consideracionp->relacion_tema_expectativa = $request->relacion_tema_expectativa;
         $consideracionp->interes_del_investigador_cp = $request->interes_del_investigador_cp;
