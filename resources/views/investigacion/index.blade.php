@@ -23,7 +23,13 @@
             class="form-control mb-2"
           />
           <input type="text" name="pregunta_pdi" placeholder="Pregunta de investigacion" class="form-control mb-2">
-          
+          <input type="text" name="relacion_tema_expectativa" placeholder="Expectativas" class="form-control mb-2">
+          <input type="text" name="interes_del_investigador_cp" placeholder="Interes" class="form-control mb-2">
+          <input type="text" name="estudios_previos_cp" placeholder="Estudios previos" class="form-control mb-2">
+          <input type="text" name="acceso_informacion_cp" placeholder="Acceso a informacion" class="form-control mb-2">
+          <input type="text" name="tiempo_recursos_cp" placeholder="Tiempo y recursos" class="form-control mb-2">
+          <input type="text" name="asesoria_orientacion_cp" placeholder="Asesoria" class="form-control mb-2">
+          <hr>
           <button class="btn btn-primary btn-block" type="submit">Agregar</button>
         </form>        
             <table class="table">

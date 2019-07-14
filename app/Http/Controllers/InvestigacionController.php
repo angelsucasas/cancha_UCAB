@@ -8,6 +8,10 @@ use App\Investigacion;
 
 use App\PreguntaDeInvestigacion;
 
+use App\ConsideracionPersonal;
+
+use App\ConsideracionSocial;
+
 class InvestigacionController extends Controller
 {
 
@@ -30,11 +34,9 @@ class InvestigacionController extends Controller
 
         $pdi = $investigacion->preguntaDeInvestigacions->first()->pregunta_pdi;
 
-        //dd($pdi);
+        $consideracionp = $pdi->consideracionPersonals->first()->interes_del_investigador_cp;
 
-        //$pdi = Investigacion::find(1)->preguntaDeInvestigacions;
-        //$pdi = $investigacion->preguntaDeInvestigacions($cod_inv)->pregunta_pdi;
-        return view('investigacion.detail', compact('investigacion', 'pdi'));
+        return view('investigacion.detail', compact('investigacion', 'pdi', 'consideracionp'));
     }
 
     /**
@@ -55,6 +57,18 @@ class InvestigacionController extends Controller
         $pdi->fk_inv = $investigacion->cod_inv;
 
         $pdi->save();
+
+        $consideracionp = new ConsideracionPersonal;
+        $consideracionp->relacion_tema_expectativa = $request->relacion_tema_expectativa;
+        $consideracionp->interes_del_investigador_cp = $request->interes_del_investigador_cp;
+        $consideracionp->estudios_previos_cp = $request->estudios_previos_cp;
+        $consideracionp->acceso_informacion_cp = $request->acceso_informacion_cp;
+        $consideracionp->tiempo_recursos_cp = $request->tiempo_recursos_cp;
+        $consideracionp->asesoria_orientacion_cp = $request->asesoria_orientacion_cp;
+        $consideracionp->fk_pdi = $pdi->cod_pdi;
+
+        $consideracionp->save();
+        
 
         return back()->with('mensaje', 'Investigacion Agregada!');
     }
