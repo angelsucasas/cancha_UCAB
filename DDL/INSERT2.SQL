@@ -1,8 +1,129 @@
+--------------------------------------ROL--------------------------------------------------------------
+
+INSERT INTO ROL (NOMBRE_ROL,DESCRIPCION_ROL) VALUES ('INVESTIGADOR','SUJETO QUE INVESTIGA');
+INSERT INTO ROL (NOMBRE_ROL,DESCRIPCION_ROL) VALUES ('TUTOR','SUJETO QUE GUIA AL INVESTIGADOR');
+
+-------------------------------------USERS----------------------------------------------------------
+
+INSERT INTO USERS (ID,NAME,EMAIL,PASSWORD,FK_ROL) VALUES (1,'DIEGO FERNANDO MONTALDO','DIEGO@FERNANDO.COM','12456',1);
+INSERT INTO USERS (ID,NAME,EMAIL,PASSWORD,FK_ROL) VALUES (2,'GUILLERMO PANTALEO','DIEGO@PANTALEO.COM','123',2);
+INSERT INTO USERS (ID,NAME,EMAIL,PASSWORD,FK_ROL) VALUES (3,'Pablo Maceri','pablo@maceri.com','12456',1);
+INSERT INTO USERS (ID,NAME,EMAIL,PASSWORD,FK_ROL) VALUES (4,'Ramón Garcia-Martinez','ramon@garcia,com','123',2);
+INSERT INTO USERS (ID,NAME,EMAIL,PASSWORD,FK_ROL) VALUES (5,'Elias Hiba','ELIAS@HIBA.COM','12456',1);
+INSERT INTO USERS (ID,NAME,EMAIL,PASSWORD,FK_ROL) VALUES (6,'Wilmer Pereira','WILMER@PEREIRA.COM','12456',2);
+
+
 -------------------------------------------INVESTIGACION-----------------------------------
 
-INSERT INTO Investigacion (enunciado_inv) VALUES('Patrones de Diseño de arquitecturas de Software Enterprises');
-INSERT INTO Investigacion (enunciado_inv) VALUES('Aprendizaje automática basado en intercambio de operadores en sistemas inteligentes autónomos.');
-INSERT INTO Investigacion (enunciado_inv) VALUES('Diseño e implementación de un sistema WEB para el control de asistencias de profesores, preparadores y ayudantes de cátedra de la UCAB vía RFID');
+INSERT INTO INVESTIGACION (ENUNCIADO_INV, FK_USE) VALUES('Patrones de Diseño de arquitecturas de Software Enterprises', 1);
+INSERT INTO INVESTIGACION (ENUNCIADO_INV, FK_USE) VALUES('Aprendizaje automática basado en intercambio de operadores en sistemas inteligentes autónomos.', 2);
+INSERT INTO INVESTIGACION (ENUNCIADO_INV, FK_USE) VALUES('Diseño e implementación de un sistema WEB para el control de asistencias de profesores, preparadores y ayudantes de cátedra de la UCAB vía RFID', 3);
+
+----------------------------------------PREGUNTA DE INVESTIGACION------------------------
+
+INSERT INTO PREGUNTA_DE_INVESTIGACION (PREGUNTA_PDI,FK_INV) VALUES ('¿COMO SON LOS PATRONES DE DISEÑO DE ARQUITECTURA DE LOS SOFTWARE ENTERPRISE?',1);
+INSERT INTO PREGUNTA_DE_INVESTIGACION (PREGUNTA_PDI,FK_INV) VALUES ('¿COMO ES EL APRENDIZAJE AUTOMATICO BASADO EN EL INTERCAMBIO DE OPERADORES EN LOS SISTEMAS INTELIGENTES AUTONOMOS?',2);
+INSERT INTO PREGUNTA_DE_INVESTIGACION (PREGUNTA_PDI,FK_INV) VALUES ('¿Cómo se llevan a cabo el control de asistencias en la UCAB actualmente?',3);
+
+-----------------------CATEGORIA------------------------------------------------------------------------
+
+INSERT INTO CATEGORIA (NOMBRE_CAT) VALUES ('CONCEPTUAL'),
+										  ('TEORICO'),
+										  ('REEFERENCIAL'),
+										  ('CONTEXTUAL');
+
+----------------------REFERENCIA UNIDAD DE INFORMACION--------------------------
+INSERT INTO REFERENCIA_UDI (DESCRIPCION_REF) VALUES ('[Martin Fowler, 2003] [Marinescu 2002]'),
+													('[Gamma et al, 1995]'),
+													('[Martin Fowler, 2003]'),
+													('[Rod Johnson, 2003], [Martin Fowler, 2003], [Marinescu 2002]')	;
+INSERT INTO REFERENCIA_UDI (DESCRIPCION_REF) VALUES ('[Carlos Beltran, 1998-1999]'),
+													('[Sun Microsystem, 2000]');								
+INSERT INTO REFERENCIA_UDI (DESCRIPCION_REF) VALUES ('[Fritz y otros, 1989; 1990; García Martínez y Borrajo,1996]'),
+													('[García Martínez, 1993a; 1993b; 1995], [García Martínez, 1996; 1997a; García Martínez et al., 1998a; 1998b; García Martínez et al., 1999a; 1999b]'),
+													('[Sutton, 1984]'),
+													('[Carbonell y otros, 1991]'),
+													('[Etzioni, 1991]'),
+													('[Shen, 1991]'),
+													('[García Martinez y Borrajo, 1997;1998], [Fritz et al., 1989]'),
+													('[García Martinez y Borrajo, 1997;1998]')
+													;	
+
+----------------------UBICACION DE UNIDAD DE INFORMACION-------------------------------------------------------------		
+
+INSERT INTO UBICACION_UDI (DESCRIPCION_UBI) VALUES	('DISPONIBLE EN LINEA');	
+
+-----------------------JUSTIFICACION DE UNIDAD DE INFORMACION------------------------------------------------------------
+INSERT INTO JUSTIFICACION_UDI (DESCRIPCION_JUS) VALUES 	('NECESARIA PARA DEFINIR CONCEPTO'),
+													   	('NECESARIA PARA LA DEFINICION TEORICA'),
+														('NECESARIA PARA LA DEFINICION DEL CONCEPTO'),
+														('NECESARIA PARA LA DEFINICION DEL CONCEPTO MOSTRADO'),
+														('NECESARIA PARA LA DEFINICION'),
+														('NECESARIA PARA LA DEFINICION DE CARACTERISTICAS');
+INSERT INTO JUSTIFICACION_UDI (DESCRIPCION_JUS) VALUES  ('NECESARIO PARA EL ENTENDIMIENTO DEL RMI'),
+														('NECESARIO PARA EL MARCO TEORICO'),
+														('NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JINI'),
+														('NECESARIO PARA EL USO DE JINI');
+INSERT INTO JUSTIFICACION_UDI (DESCRIPCION_JUS) VALUES	('NECESARIO PARA EL ENTENDIMIENTO DEL SIA'),
+														('NECESARIO PARA EL MARCO TEORICO'),
+														('NECESARIO PARA COMPRENDER LA INTERACCION ENTRE SISTEMAS INTELIGENTES'),
+														('NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JIN'),
+														('NECESARIO PARA EL USO DE REGLAS DE CONTROL'),
+														('NECESARIO PARA ENTENDER EL USO DE LA ARQUITECTURA LIVE'),
+														('NECESARIO PARA MEDIR REPETIBILIDAD'),
+														('NECESARIO ENTENDER LA TEORIA DE SISTEMAS INTELIGENTES AUTONOMOS');
+
+----------------------------------------INSTRUMENTO--------------------------------------
+
+INSERT INTO INSTRUMENTO (NOMBRE_INS,DESCRIPCION_INS) VALUES ('Análisis','Mediante un analisis detallado de varias fuentes se llega a un resultado');
+INSERT INTO INSTRUMENTO (NOMBRE_INS,DESCRIPCION_INS) VALUES ('EXPERIMETNAL','SE APLICA VARIAS VECES UN PROCESO PARA CONSEGUIR UN PROMEDIO');
+INSERT INTO INSTRUMENTO (NOMBRE_INS,DESCRIPCION_INS) VALUES ('Experimental ','Al implementar el sistema dependerá de profesores y estudiantes su uso');
+
+------------------------------------------------EVENTO DE ESTUDIO-------------------------------
+
+INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS) VALUES ('ANALISIS DE FRAMEWORK','SE ANALIZA DETALLADAMENTE UN FRAMEWORK',1);
+INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS) VALUES ('ANALISIS DE PATRONES','SE ANALIZA LOS DIFERENTES PATRONES ENCONTRADOS',1);
+--INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS) VALUES ('CREACION DEL NUEVO SOFTWARE','SE DESARROLLA UN SOFTWARE QUE PLANTEE UNA SOLUCION',1,4);--
+INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS) VALUES ('Integración SIA-Khepera.','INTEGRACION DE SIA- KHEPERA',2);
+--INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS) VALUES ('Diseño Experimental.','SE ANALIZA LOS DIFERENTES PATRONES ENCONTRADOS',2,9);--
+INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS) VALUES ('Control de asistencia','control de asistencias por parte de profesores, preparadores y ayudantes de catedra',3);
+
+----------------------UNIDAD DE INFORMACION-------------------------------------------------------------
+INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,FK_EDE,FK_PDI,FK_CAT,FK_REF, FK_UBI,FK_JUS) VALUES
+								  ('También denominada Fachada de Servicio (Facade), es la encargada de brindar los servicios necesarios a la capa de presentación.',1,1,1,1,1,1),
+								  ('Para romper con esta dependencia se recurrió al uso del patrón de diseño Adapter.',2,1,2,2,1,2),
+								  ('Los parámetros intercambiados entre ambas capas son objetos DTO (Data Transfer Object).',3,1,1,1,1,3),
+								  ('Clave simple o compuesta (relación con Foreign Key y con Compound Key. Una clave simple hace uso de un solo campo en la base de datos y un solo atributo en el objeto asociado, mientras que una clave compuesta usa mas de uno. Una clave compuesta es de utilidad ya que contiene mayor información en determinados contextos, sin embargo, dificulta la generalización al momento de generar código para su administración.',1,1,1,3,1,4),
+								  ('Pessimistic offline lock: fuerza a la obtención de un lock sobre los datos antes de comenzar a usarlos y los mantendrá en ese estado hasta que termine de usarlos, evitando así la posible inconsistencia. Este patrón es usado cuando la posibilidad de sesiones concurrentes sobre los mismos datos tienen una alta probabilidad. Su implementación está basada en un lock manager el cual administra una tabla de locks. Para los detalles asociados a cada uno ver .',1,2,3,3,1,5),
+								  ('Entre las características salientes de un sistema de tipo Enterprise,  se pueden mencionar las siguientes:  
+									Datos masivos (gran volumen) y persistentes. 
+									Acceso concurrente, lo que implica gran cantidad de usuarios. 
+									Variedad de interfaces de usuario, lo que implica diversidad en la funcionalidad brindada. 
+									Integración con otros sistemas, lo que implica que comparten funcionalidad y / o datos. 
+									Disonancia conceptual (modelo de datos con distintas visiones), debido a que poseen un modelo de negocio subyacente que abarca distintos aspectos de un área de negocio. Por lo tanto prestan distintas funcionalidades a distintos tipos de usuarios. 
+									Lógica de negocio, lo que implica procesamiento de datos.',1,1,1,4,1,6);
+INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,FK_EDE,FK_PDI,FK_CAT, FK_REF, FK_UBI,FK_JUS) VALUES
+								  ('El paso de objetos por valor se revela como una de las características que diferencia RMI de las otras tecnologías de programación distribuida. Esta potente posibilidad se basa el uso del concepto de “socialización” para el paso de objetos a través de la red. Objetos todo tipo, tanto nativos JAVA como definidos por el usuario, pueden ser transferidos totalmente transparente al programador usando esta técnica.', 3, 3 ,2,5,1,7),
+								  ('Las interfaces definen el comportamiento y las clases definen la implementación' , 3, 3, 2, 5,1,8),
+								  ('La tecnología de la conectividad JINITM está basada en un concepto sencillo: los dispositivos deben trabajar en conjunto. Deben interconectarse sin problema. Sin drivers, ni problemas con sistemas operativos, ni cables o conectores extraños. No, obstante la tecnología ofrece  nuevos e interesantes conceptos y capacidades', 3, 3, 2, 6,1,9),
+								  ('La comunicación entre servicios es llevada a cabo usando la invocación de métodos remotos de Java (RMI). El mecanismo que soporta la comunicación entre los servicios no es por sí mismo un recurso que es encontrado y usado, sino que este es una parte de la infraestructura de la tecnología JINI.', 3, 3, 2,6,1,9),
+								  ('El diseño del modelo de seguridad para la tecnología JINI es construido a partir de la doble noción de un director y una lista de control de acceso.',3, 3, 2, 6,1,10);
+
+INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,FK_EDE,FK_PDI,FK_CAT, FK_REF, FK_UBI,FK_JUS) VALUES
+									('Un sistema inteligente autónomo ha sido definido  como aquél que puede descubrir y registrar si una acción hecha en una situación dada fue favorable.',  4 , 2 , 1, 7,1,11 ),
+									('Tal modelo es parcial pero tiene la consistencia suficiente como para ser utilizado por su carácter predictivo en procesos de planificación suficiente',  3, 2, 2, 8,1,12),
+									('En este contexto, el propósito de este proyecto es estudiar de que manera la interacción entre sistemas inteligentes autónomos mejora el modelo de funcionamiento del entorno que cada sistema va formando y cómo se integran en dicha interacción los modelos de refuerzo.',3, 2, 2, 9,1,13),
+									('Un problema consiste de un estado inicial y una expresión objetivo. Para resolver un problema, el sistema PRODIGY debe encontrar una secuencia de operadores que, si se aplican a un estado inicial, produce un estado final satisfaciendo la expresión objetivo.',3, 2, 2, 10,1,14),
+									('El programa ESTATICO produce reglas de control sin utilizar ningún ejemplo de entrenamiento.',3, 2, 1, 11,1,15),
+									('LIVE es una arquitectura implementada para aprender del entorno.',3, 2, 1, 12,1,16),
+									('¿Cuál es la repetibilidad de los resultados de trabajos previos en la teoría de sistemas inteligentes autónomos al cambiar de plataforma robot (migrar de la plataforma a Khepera)?',3, 2, 4, 13,1,17),
+									('En trabajos previos en la teoría de sistemas inteligentes autónomos se realizan experimentos similares en los que se grafican la cantidad de situación y de teorías a lo largo del tiempo y se comparan distintos métodos de aprendizaje a través del análisis del porcentaje de planes exitosos a lo largo del tiempo ',3, 2, 3, 14,1,18);
+
+--------------------------------------------TIPO DE INVESTIGACION-----------------------
+
+INSERT INTO TIPO_DE_INVESTIGACION (NOMBRE_TDI,DESCRIPCION_TDI,FK_PDI,FK_UDI) VALUES ('PROYECTIVA','ES UNA INVESTIGACION PROYECTIVA',1,1);
+INSERT INTO TIPO_DE_INVESTIGACION (NOMBRE_TDI,DESCRIPCION_TDI,FK_PDI,FK_UDI) VALUES ('PROYECTIVA','ES UNA INVESTIGACION PROYECTIVA',2,7);
+INSERT INTO TIPO_DE_INVESTIGACION (NOMBRE_TDI,DESCRIPCION_TDI,FK_PDI,FK_UDI) VALUES ('PROYECTIVA','ES UNA INVESTIGACION PROYECTIVA',3,12);
 
 ----------------------------------------- OBJETIVO GENERAL---------------------------------
 
@@ -29,24 +150,6 @@ INSERT INTO OBJETIVO_ESPECIFICO (DESCRIPCION_OE,FK_OG) VALUES ('evaluar el tipo 
 															  ('Desarrollar una aplicación Web que gestione el control de asistencia de los profesores preparadores y ayudantes de catedra de la UCAB basados en los datos obtenidos mediante el uso del sistema RFID diseñado.',3),
 															  ('Desarrollar un módulo de reportes en la aplicación Web para la visualización de las asistencias de los profesores, preparadores y ayudantes de catedra.',3);
 
---------------------------------------------TIPO DE INVESTIGACION-----------------------
-
-INSERT INTO TIPO_DE_INVESTIGACION (NOMBRE_TDI,DESCRIPCION_TDI,FK_PDI,FK_UDI) VALUES ('PROYECTIVA','ES UNA INVESTIGACION PROYECTIVA',1,1);
-INSERT INTO TIPO_DE_INVESTIGACION (NOMBRE_TDI,DESCRIPCION_TDI,FK_PDI,FK_UDI) VALUES ('PROYECTIVA','ES UNA INVESTIGACION PROYECTIVA',2,7);
-INSERT INTO TIPO_DE_INVESTIGACION (NOMBRE_TDI,DESCRIPCION_TDI,FK_PDI,FK_UDI) VALUES ('PROYECTIVA','ES UNA INVESTIGACION PROYECTIVA',3,12);
-
-----------------------------------------PREGUNTA DE INVESTIGACION------------------------
-
-INSERT INTO PREGUNTA_DE_INVESTIGACION (PREGUNTA_PDI,FK_INV) VALUES ('¿COMO SON LOS PATRONES DE DISEÑO DE ARQUITECTURA DE LOS SOFTWARE ENTERPRISE?',1);
-INSERT INTO PREGUNTA_DE_INVESTIGACION (PREGUNTA_PDI,FK_INV) VALUES ('¿COMO ES EL APRENDIZAJE AUTOMATICO BASADO EN EL INTERCAMBIO DE OPERADORES EN LOS SISTEMAS INTELIGENTES AUTONOMOS?',2);
-INSERT INTO PREGUNTA_DE_INVESTIGACION (PREGUNTA_PDI,FK_INV) VALUES ('¿Cómo se llevan a cabo el control de asistencias en la UCAB actualmente?',3);
-
-----------------------------------------INSTRUMENTO--------------------------------------
-
-INSERT INTO INSTRUMENTO (NOMBRE_INS,DESCRIPCION_INS) VALUES ('Análisis','Mediante un analisis detallado de varias fuentes se llega a un resultado');
-INSERT INTO INSTRUMENTO (NOMBRE_INS,DESCRIPCION_INS) VALUES ('EXPERIMETNAL','SE APLICA VARIAS VECES UN PROCESO PARA CONSEGUIR UN PROMEDIO');
-INSERT INTO INSTRUMENTO (NOMBRE_INS,DESCRIPCION_INS) VALUES ('Experimental ','Al implementar el sistema dependerá de profesores y estudiantes su uso');
-
 -----------------------------------------CONTEXTO----------------------------------------
 
 
@@ -63,26 +166,17 @@ INSERT INTO FUENTE (DESCRIPCION_FUE,FK_INS)VALUES ('García Martinez(1997)',2),
 INSERT INTO FUENTE (DESCRIPCION_FUE,FK_INS)VALUES ('¿que son las bases de datos? (2007) Damian,P.',3),
 												  ('Arquitectura Modelo/Vista/Controlador (2007) Catalani, E.',3);
 
-------------------------------------------------EVENTO DE ESTUDIO-------------------------------
-
-INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS,FK_UDI) VALUES ('ANALISIS DE FRAMEWORK','SE ANALIZA DETALLADAMENTE UN FRAMEWORK',1,2);
-INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS,FK_UDI) VALUES ('ANALISIS DE PATRONES','SE ANALIZA LOS DIFERENTES PATRONES ENCONTRADOS',1,3);
---INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS,FK_UDI) VALUES ('CREACION DEL NUEVO SOFTWARE','SE DESARROLLA UN SOFTWARE QUE PLANTEE UNA SOLUCION',1,4);--
-INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS,FK_UDI) VALUES ('Integración SIA-Khepera.','INTEGRACION DE SIA- KHEPERA',2,8);
---INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS,FK_UDI) VALUES ('Diseño Experimental.','SE ANALIZA LOS DIFERENTES PATRONES ENCONTRADOS',2,9);--
-INSERT INTO EVENTO_DE_ESTUDIO (NOMBRE_EDE,DESCRIPCION_EDE,FK_INS,FK_UDI) VALUES ('Control de asistencia','control de asistencias por parte de profesores, preparadores y ayudantes de catedra',3,14);
-
 ------------------------------------------------ESTADIO-------------------------------------------
 
 INSERT INTO ESTADIO (DESCRIPCION_EST,RECORRIDO_EST,FK_OE) VALUES ('SE DESCRIBEN LOS RESULTADOS OBTENIDOS BREVEMENTE','DESCRIPTIVO',1);
 INSERT INTO ESTADIO (DESCRIPCION_EST,RECORRIDO_EST,FK_OE) VALUES ('SE DESCRIBEN LOS RESULTADOS OBTENIDOS BREVEMENTE','DESCRIPTIVO',1);
 INSERT INTO ESTADIO (DESCRIPCION_EST,RECORRIDO_EST,FK_OE) VALUES (' Se estima la efectividad del sistema de control que ya está funcionando','Evaluativo',3);
 
--------------------------------------------------POBLACION-------------------------------------------
+--------------------------------------------------MUESTRA--------------------------------------------
 
-INSERT INTO POBLACION (DESCRIPCION_POB,FK_TDM) VALUES ('Los sistemas con arquitecturas de software de tipo Enterprise',1);
-INSERT INTO POBLACION (DESCRIPCION_POB,FK_TDM) VALUES ('Los sistemas inteligentes autónomos (SIA)',2);
-INSERT INTO POBLACION (DESCRIPCION_POB,FK_TDM) VALUES ('Profesores, preparadores y ayudantes de catedra de la UCAB',3);
+INSERT INTO MUESTRA (DESCRIPCION_MUE) VALUES ('SOFTWARE TIPO ENTERPRISE PROPUESTO');
+INSERT INTO MUESTRA (DESCRIPCION_MUE) VALUES ('Un SIA propuesto por el investigador.');
+INSERT INTO MUESTRA (DESCRIPCION_MUE) VALUES ('Profesores, preparadores y ayudantes de catedra de la UCAB de la escuela de ingeniería en informática de la UCAB.');
 
 -------------------------------------------------TECNICA DE MUESTREO---------------------------------
 
@@ -90,11 +184,11 @@ INSERT INTO TECNICA_DE_MUESTREO (DESCRIPCION_TDM,FK_MUE) VALUES ('SOFTWARE DE TI
 INSERT INTO TECNICA_DE_MUESTREO (DESCRIPCION_TDM,FK_MUE) VALUES ('SIA AUTOMOS AL ALCANZE DEL INVESTIGADOR',2);
 INSERT INTO TECNICA_DE_MUESTREO (DESCRIPCION_TDM,FK_MUE) VALUES ('Sistema RFID',3);
 
---------------------------------------------------MUESTRA--------------------------------------------
+-------------------------------------------------POBLACION-------------------------------------------
 
-INSERT INTO MUESTRA (DESCRIPCION_MUE) VALUES ('SOFTWARE TIPO ENTERPRISE PROPUESTO');
-INSERT INTO MUESTRA (DESCRIPCION_MUE) VALUES ('Un SIA propuesto por el investigador.');
-INSERT INTO MUESTRA (DESCRIPCION_MUE) VALUES ('Profesores, preparadores y ayudantes de catedra de la UCAB de la escuela de ingeniería en informática de la UCAB.');
+INSERT INTO POBLACION (DESCRIPCION_POB,FK_TDM) VALUES ('Los sistemas con arquitecturas de software de tipo Enterprise',1);
+INSERT INTO POBLACION (DESCRIPCION_POB,FK_TDM) VALUES ('Los sistemas inteligentes autónomos (SIA)',2);
+INSERT INTO POBLACION (DESCRIPCION_POB,FK_TDM) VALUES ('Profesores, preparadores y ayudantes de catedra de la UCAB',3);
 
 --------------------------------------------------SINERGIA--------------------------------------------
 
@@ -159,20 +253,6 @@ INSERT INTO TEMPORALIDAD (fecha_tem,FK_EDE,FK_UDI) VALUES ('2005', 1, 6);
 INSERT INTO TEMPORALIDAD (fecha_tem,FK_EDE,FK_UDI) VALUES ('2001', 4, 11);
 --INSERT INTO TEMPORALIDAD (fecha_tem,FK_EDE,FK_UDI) VALUES ('2015', 6, 16);--
 
--------------------------------------USUARIO----------------------------------------------------------
-
-INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (1,'DIEGO FERNANDO MONTALDO','DIEGO@FERNANDO.COM','12456',1);
-INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (2,'GUILLERMO PANTALEO','DIEGO@PANTALEO.COM','123',2);
-INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (3,'Pablo Maceri','pablo@maceri.com','12456',1);
-INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (4,'Ramón Garcia-Martinez','ramon@garcia,com','123',2);
-INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (5,'Elias Hiba','ELIAS@HIBA.COM','12456',1);
-INSERT INTO USUARIO (COD_USU,NOMBRE_USU,CORREO_USU,CONTRASEÑA_USU,FK_ROL) VALUES (6,'Wilmer Pereira','WILMER@PEREIRA.COM','12456',2);
-
---------------------------------------ROL--------------------------------------------------------------
-
-INSERT INTO ROL (NOMBRE_ROL,DESCRIPCION_ROL) VALUES ('INVESTIGADOR','SUJETO QUE INVESTIGA');
-INSERT INTO ROL (NOMBRE_ROL,DESCRIPCION_ROL) VALUES ('TUTOR','SUJETO QUE GUIA AL INVESTIGADOR');
-
 -------------------------------------EDE_PDI--------------------------------------
 
 INSERT INTO EDE_PDI (FK_EDE, FK_PDI) VALUES (1, 1),
@@ -212,82 +292,8 @@ INSERT INTO PDI_CON (FK_PDI, FK_CON) VALUES (1, 1);
 INSERT INTO PDI_CON (FK_PDI, FK_CON) VALUES (2, 2);
 INSERT INTO PDI_CON (FK_PDI, FK_CON) VALUES (3, 3);
 
------------------------CATEGORIA------------------------------------------------------------------------
 
-INSERT INTO CATEGORIA (NOMBRE_CAT) VALUES ('CONCEPTUAL'),
-										  ('TEORICO'),
-										  ('REEFERENCIAL'),
-										  ('CONTEXTUAL');
 									
-----------------------REFERENCIA UNIDAD DE INFORMACION--------------------------
-	INSERT INTO REFERENCIA_UDI (DESCRIPCION_REF) VALUES ('[Martin Fowler, 2003] [Marinescu 2002]'),
-														('[Gamma et al, 1995]'),
-														('[Martin Fowler, 2003]'),
-														('[Rod Johnson, 2003], [Martin Fowler, 2003], [Marinescu 2002]')	;
-	INSERT INTO REFERENCIA_UDI (DESCRIPCION_REF) VALUES ('[Carlos Beltran, 1998-1999]'),
-														('[Sun Microsystem, 2000]');								
-	INSERT INTO REFERENCIA_UDI (DESCRIPCION_REF) VALUES ('[Fritz y otros, 1989; 1990; García Martínez y Borrajo,1996]'),
-														('[García Martínez, 1993a; 1993b; 1995], [García Martínez, 1996; 1997a; García Martínez et al., 1998a; 1998b; García Martínez et al., 1999a; 1999b]'),
-														('[Sutton, 1984]'),
-														('[Carbonell y otros, 1991]'),
-														('[Etzioni, 1991]'),
-														('[Shen, 1991]'),
-														('[García Martinez y Borrajo, 1997;1998], [Fritz et al., 1989]'),
-														('[García Martinez y Borrajo, 1997;1998]')
-														;	
-----------------------UBICACION DE UNIDAD DE INFORMACION-------------------------------------------------------------		
-INSERT INTO UBICACION_UDI (DESCRIPCION_UBI) VALUES	('DISPONIBLE EN LINEA');	
-
------------------------JUSTIFICACION DE UNIDAD DE INFORMACION------------------------------------------------------------
-INSERT INTO JUSTIFICACION_UDI (DESCRIPCION_JUS) VALUES 	('NECESARIA PARA DEFINIR CONCEPTO'),
-													   	('NECESARIA PARA LA DEFINICION TEORICA'),
-														('NECESARIA PARA LA DEFINICION DEL CONCEPTO'),
-														('NECESARIA PARA LA DEFINICION DEL CONCEPTO MOSTRADO'),
-														('NECESARIA PARA LA DEFINICION'),
-														('NECESARIA PARA LA DEFINICION DE CARACTERISTICAS');
-INSERT INTO JUSTIFICACION_UDI (DESCRIPCION_JUS) VALUES  ('NECESARIO PARA EL ENTENDIMIENTO DEL RMI'),
-														('NECESARIO PARA EL MARCO TEORICO'),
-														('NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JINI'),
-														('NECESARIO PARA EL USO DE JINI');
-INSERT INTO JUSTIFICACION_UDI (DESCRIPCION_JUS) VALUES	('NECESARIO PARA EL ENTENDIMIENTO DEL SIA'),
-														('NECESARIO PARA EL MARCO TEORICO'),
-														('NECESARIO PARA COMPRENDER LA INTERACCION ENTRE SISTEMAS INTELIGENTES'),
-														('NECESARIO PARA COMPRENDER EL USO DE LA TECNOLOGIA JIN'),
-														('NECESARIO PARA EL USO DE REGLAS DE CONTROL'),
-														('NECESARIO PARA ENTENDER EL USO DE LA ARQUITECTURA LIVE'),
-														('NECESARIO PARA MEDIR REPETIBILIDAD'),
-														('NECESARIO ENTENDER LA TEORIA DE SISTEMAS INTELIGENTES AUTONOMOS');
-
-----------------------UNIDAD DE INFORMACION-------------------------------------------------------------
-INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,FK_EDE,FK_PDI,FK_CAT,FK_REF, FK_UBI,FK_JUS) VALUES
-								  ('También denominada Fachada de Servicio (Facade), es la encargada de brindar los servicios necesarios a la capa de presentación.',1,1,1,1,1,1),
-								  ('Para romper con esta dependencia se recurrió al uso del patrón de diseño Adapter.',2,1,2,2,1,2),
-								  ('Los parámetros intercambiados entre ambas capas son objetos DTO (Data Transfer Object).',3,1,1,1,1,3),
-								  ('Clave simple o compuesta (relación con Foreign Key y con Compound Key. Una clave simple hace uso de un solo campo en la base de datos y un solo atributo en el objeto asociado, mientras que una clave compuesta usa mas de uno. Una clave compuesta es de utilidad ya que contiene mayor información en determinados contextos, sin embargo, dificulta la generalización al momento de generar código para su administración.',1,1,1,3,1,4),
-								  ('Pessimistic offline lock: fuerza a la obtención de un lock sobre los datos antes de comenzar a usarlos y los mantendrá en ese estado hasta que termine de usarlos, evitando así la posible inconsistencia. Este patrón es usado cuando la posibilidad de sesiones concurrentes sobre los mismos datos tienen una alta probabilidad. Su implementación está basada en un lock manager el cual administra una tabla de locks. Para los detalles asociados a cada uno ver .',1,2,3,3,1,5),
-								  ('Entre las características salientes de un sistema de tipo Enterprise,  se pueden mencionar las siguientes:  
-									Datos masivos (gran volumen) y persistentes. 
-									Acceso concurrente, lo que implica gran cantidad de usuarios. 
-									Variedad de interfaces de usuario, lo que implica diversidad en la funcionalidad brindada. 
-									Integración con otros sistemas, lo que implica que comparten funcionalidad y / o datos. 
-									Disonancia conceptual (modelo de datos con distintas visiones), debido a que poseen un modelo de negocio subyacente que abarca distintos aspectos de un área de negocio. Por lo tanto prestan distintas funcionalidades a distintos tipos de usuarios. 
-									Lógica de negocio, lo que implica procesamiento de datos.',1,1,1,4,1,6);
-INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,FK_EDE,FK_PDI,FK_CAT, FK_REF, FK_UBI,FK_JUS) VALUES
-								  ('El paso de objetos por valor se revela como una de las características que diferencia RMI de las otras tecnologías de programación distribuida. Esta potente posibilidad se basa el uso del concepto de “socialización” para el paso de objetos a través de la red. Objetos todo tipo, tanto nativos JAVA como definidos por el usuario, pueden ser transferidos totalmente transparente al programador usando esta técnica.', 3, 3 ,2,5,1,7),
-								  ('Las interfaces definen el comportamiento y las clases definen la implementación' , 3, 3, 2, 5,1,8),
-								  ('La tecnología de la conectividad JINITM está basada en un concepto sencillo: los dispositivos deben trabajar en conjunto. Deben interconectarse sin problema. Sin drivers, ni problemas con sistemas operativos, ni cables o conectores extraños. No, obstante la tecnología ofrece  nuevos e interesantes conceptos y capacidades', 3, 3, 2, 6,1,9),
-								  ('La comunicación entre servicios es llevada a cabo usando la invocación de métodos remotos de Java (RMI). El mecanismo que soporta la comunicación entre los servicios no es por sí mismo un recurso que es encontrado y usado, sino que este es una parte de la infraestructura de la tecnología JINI.', 3, 3, 2,6,1,9),
-								  ('El diseño del modelo de seguridad para la tecnología JINI es construido a partir de la doble noción de un director y una lista de control de acceso.',3, 3, 2, 6,1,10);
-
-INSERT INTO UNIDAD_DE_INFORMACION (CITA_UDI,FK_EDE,FK_PDI,FK_CAT, FK_REF, FK_UBI,FK_JUS) VALUES
-									('Un sistema inteligente autónomo ha sido definido  como aquél que puede descubrir y registrar si una acción hecha en una situación dada fue favorable.',  4 , 2 , 1, 7,1,11 ),
-									('Tal modelo es parcial pero tiene la consistencia suficiente como para ser utilizado por su carácter predictivo en procesos de planificación suficiente',  3, 2, 2, 8,1,12),
-									('En este contexto, el propósito de este proyecto es estudiar de que manera la interacción entre sistemas inteligentes autónomos mejora el modelo de funcionamiento del entorno que cada sistema va formando y cómo se integran en dicha interacción los modelos de refuerzo.',3, 2, 2, 9,1,13),
-									('Un problema consiste de un estado inicial y una expresión objetivo. Para resolver un problema, el sistema PRODIGY debe encontrar una secuencia de operadores que, si se aplican a un estado inicial, produce un estado final satisfaciendo la expresión objetivo.',3, 2, 2, 10,1,14),
-									('El programa ESTATICO produce reglas de control sin utilizar ningún ejemplo de entrenamiento.',3, 2, 1, 11,1,15),
-									('LIVE es una arquitectura implementada para aprender del entorno.',3, 2, 1, 12,1,16),
-									('¿Cuál es la repetibilidad de los resultados de trabajos previos en la teoría de sistemas inteligentes autónomos al cambiar de plataforma robot (migrar de la plataforma a Khepera)?',3, 2, 4, 13,1,17),
-									('En trabajos previos en la teoría de sistemas inteligentes autónomos se realizan experimentos similares en los que se grafican la cantidad de situación y de teorías a lo largo del tiempo y se comparan distintos métodos de aprendizaje a través del análisis del porcentaje de planes exitosos a lo largo del tiempo ',3, 2, 3, 14,1,18);
 
 
 

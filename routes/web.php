@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/investigacion', 'InvestigacionController');
+
+Route::post('/investigacion/crear', 'InvestigacionController@crear')->name('investigacion.crear');
+
+Route::get('/{cod_inv}', 'InvestigacionController@detail')->name('investigacion.detail');
