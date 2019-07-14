@@ -31,6 +31,7 @@ class Poblacion extends Model
      * @var array
      */
     protected $fillable = ['fk_tdm', 'descripcion_pob'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

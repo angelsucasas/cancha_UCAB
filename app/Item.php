@@ -30,6 +30,7 @@ class Item extends Model
      * @var array
      */
     protected $fillable = ['fk_par', 'num_item'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

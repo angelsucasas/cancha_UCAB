@@ -29,6 +29,7 @@ class ReferenciaUdi extends Model
      * @var array
      */
     protected $fillable = ['descripcion_ref'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

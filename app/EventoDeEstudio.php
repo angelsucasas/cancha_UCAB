@@ -35,6 +35,7 @@ class EventoDeEstudio extends Model
      * @var array
      */
     protected $fillable = ['fk_ins', 'nombre_ede', 'descripcion_ede'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

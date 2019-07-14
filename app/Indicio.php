@@ -32,6 +32,7 @@ class Indicio extends Model
      * @var array
      */
     protected $fillable = ['fk_sin', 'nombre_ind', 'descripcion_ind'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

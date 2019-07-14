@@ -33,6 +33,7 @@ class Sinergia extends Model
      * @var array
      */
     protected $fillable = ['fk_ede', 'nombre_sin', 'descripcion_sin', 'fk_ude'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -32,6 +32,7 @@ class Temporalidad extends Model
      * @var array
      */
     protected $fillable = ['fk_ede', 'fk_udi', 'fecha_tem'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -31,6 +31,7 @@ class Parametro extends Model
      * @var array
      */
     protected $fillable = ['fk_ind', 'muestra_par'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

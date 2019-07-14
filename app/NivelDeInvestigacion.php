@@ -29,6 +29,7 @@ class NivelDeInvestigacion extends Model
      * @var array
      */
     protected $fillable = ['descripcion_ndi'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

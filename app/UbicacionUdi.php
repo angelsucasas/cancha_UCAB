@@ -29,7 +29,7 @@ class UbicacionUdi extends Model
      * @var array
      */
     protected $fillable = ['descripcion_ubi'];
-
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

@@ -30,6 +30,7 @@ class EnteGubernamental extends Model
      * @var array
      */
     protected $fillable = ['fk_usu', 'descripcion_eg'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -32,7 +32,7 @@ class Contexto extends Model
      * @var array
      */
     protected $fillable = ['fk_udi', 'nombre_con', 'descripcion_con'];
-
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

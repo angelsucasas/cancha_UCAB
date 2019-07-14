@@ -31,6 +31,7 @@ class EdePdi extends Model
      * @var array
      */
     protected $fillable = ['fk_ede', 'fk_pdi'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

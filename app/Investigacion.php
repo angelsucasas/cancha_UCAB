@@ -30,7 +30,8 @@ class Investigacion extends Model
     /**
      * @var array
      */
-    protected $fillable = ['fk_use', 'enunciado_inv'];
+    //protected $fillable = ['fk_use', 'enunciado_inv'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
