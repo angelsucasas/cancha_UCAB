@@ -14,13 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+/*rutas para el manejo del usuario y autenticacion */
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/investigacion', 'InvestigacionController');
+/*rutas para manejar los equipos */
+Route::get('/equipo/c','\App\Http\Controllers\cancha\equipoControlador@crear');
+Route::POST('/equipo/guardar','\App\Http\Controllers\cancha\equipoControlador@guardar');
+Route::get('/equipo/index','\App\Http\Controllers\cancha\equipoControlador@index');
 
-Route::post('/investigacion/crear', 'InvestigacionController@crear')->name('investigacion.crear');
 
-Route::get('/{cod_inv}', 'InvestigacionController@detail')->name('investigacion.detail');
+
+
+
