@@ -76,7 +76,7 @@
 
                 <!-- LOGO -->
                 <div class="logo-box">
-                    <a href="{{route('home')}}" class="logo text-center">
+                    <a href="" class="logo text-center">
                         <span class="logo-lg">
                             <img src="{{URL::asset('assets/app/images/logo-light-large.png')}}" alt="" height="50">
                         </span>

@@ -1,106 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #0F5387;
-  width: 100%;
-}
-.cities {
-  background-color: #F7F4F9;
-  color: black;
-  padding: 16px 20px;
-  margin: 8px 16px;
-  
+@extends('layouts.prueba')
+@section('content')   
 
-  width: 70%;
-  opacity: 0.8;
-}
 
-* {
-  box-sizing: border-box;
-}
+<!-- Begin page content -->
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
-  background-color: #A695EE;
-  width: 100%;
-}
+  <div class="container-fluid">
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 50%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
-</style>
-</head>
-<body>
-@csrf
-
-<table >
-  <tr>
-    <th>Equipos en los que estas registrado</th>
-    <th><br></th>
-  </tr>
-
-    <tr>
-        <th><hr></th>
+  <table  class="table table-bordered">
+  <thead>
+    <tr class="gabriel">
+      
+      <th  style="color:white;" scope="col"><div align="center">Mis equipos</div></th>
+      
     </tr>
-  
-         @foreach($nom_equi as $equipo)
-         <tr>
-            <th>{{$equipo}}</th>
-            <th><br></th>
-        </tr>
-        @endforeach
+  </thead>
+  <tbody>
+  @foreach($nom_equi as $equipo)
+    <tr class="diana">
+      
+      <td style="color:white;"><div align="center">{{$equipo}}</div></td>
     
+    </tr>
+    @endforeach
+  </tbody>
 </table>
+   
+   
+   
+    </div>
+  </div>
 
-
-</body>
-</html>
+@endsection

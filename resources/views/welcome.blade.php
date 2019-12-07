@@ -1,220 +1,114 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8" />
-        <title>InvestigaUCAB</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-        <meta content="Coderthemes" name="author" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+@extends('layouts.prueba')
+@section('content')   
 
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ URL::asset('assets/landing/images/logo-ucab-icono.png')}}">
+@if(isset($message))  
+<div class="container">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{$message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+</div>
+@endif
 
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="{{ URL::asset('assets/landing/css/bootstrap.min.css')}}" type="text/css">
+<!-- Page Content -->
+<div class="container ">
+    <div class="row">
 
-        <!--Material Icon -->
-        <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/landing/css/materialdesignicons.min.css')}}" />
-
-        <!-- Custom  sCss -->
-        <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/landing/css/style.css')
-        }}" />
-
-    </head>
-
-    <body>
-
-        <!--Navbar Start-->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
-            <div class="container-fluid">
-                <!-- LOGO -->
-                <a class="logo text-uppercase" href="index.html">
-                    <img src="{{ URL::asset('assets/landing/images/logo-light-large.png')}}" alt="" class="logo-light" height="60" />
-                    <img src="{{ URL::asset('assets/landing/images/logo-dark-large.png')}}" alt="" class="logo-dark" height="60" />
-                </a>
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="mdi mdi-menu"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
-                        <li class="nav-item active">
-                            <a href="#home" class="nav-link">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#contact" class="nav-link">Contacto</a>
-                        </li>
-                    </ul>
-                    <a href="{{route('login')}}" class="btn btn-info navbar-btn">Ingresar</a>
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar End -->
-
-        <!-- home start -->
-        <section class="bg-home bg-gradient" id="home">
-            <div class="home-center">
-                <div class="home-desc-center">
-                    <div class="container-fluid">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <div class="home-title mo-mb-20">
-                                    <h1 class="mb-4 text-white">Bienvenidos a InvestigaUCAB</h1>
-                                    <p class="text-white-50 home-desc mb-5">InvestigaUCAB es una plataformta que te ayudara a crear tus proyectos de investigacion , a evaluar su efectividad y muchas cosas mas!!!</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 offset-xl-2 col-lg-5 offset-lg-1 col-md-7">
-                                <div class="home-img position-relative">
-                                    <img src="{{ URL::asset('assets/landing/images/investigacion.svg')}}" alt="" class="home-first-img">
-                                    <img src="{{ URL::asset('assets/landing/images/investigacion.svg')}}" alt="" class="home-second-img mx-auto d-block">
-                                    <img src="{{ URL::asset('assets/landing/images/investigacion.svg')}}" alt="" class="home-third-img">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-                    </div>
-                    <!-- end container-fluid -->
-                </div>
-            </div>
-        </section>
-        <!-- home end --->
-
-
-
-        <!-- contact start -->
-        <section class="section pb-0 bg-gradient" id="contact">
-            <div class="bg-shape">
-                <img src="images/bg-shape-light.png" alt="" class="img-fluid mx-auto d-block">
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="title text-center mb-4">
-                            <h3 class="text-white">Tienes alguna duda ?</h3>
-                            <p class="text-white-50">Por Favor llena nuestro formulario y te responderemos lo mas pronto posible!</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- end row -->
-                <div class="row mb-4">
-                    <div class="col-lg-4">
-                        <div class="contact-content text-center mt-4">
-                            <div class="contact-icon mb-2">
-                                <i class="mdi mdi-email-outline text-info h2"></i>
-                            </div>
-                            <div class="contact-details text-white">
-                                <h5 class="text-white">E-mail</h5>
-                                <p class="text-white-50">ejemplo@abc.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col -->
-                    <div class="col-lg-4">
-                        <div class="contact-content text-center mt-4">
-                            <div class="contact-icon mb-2">
-                                <i class="mdi mdi-cellphone-iphone text-info h2"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h5 class="text-white">Telefono</h5>
-                                <p class="text-white-50">+58-000-0000</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col -->
-                    <div class="col-lg-4">
-                        <div class="contact-content text-center mt-4">
-                            <div class="contact-icon mb-2">
-                                <i class="mdi mdi-map-marker text-info h2"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h5 class="text-white">Direccion</h5>
-                                <p class="text-white-50">Av. ejemplo calle ejemplo, ejemplo</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-
-                        <div class="custom-form p-5 bg-white">
-                            <div id="message"></div>
-                            <form method="post" action="php/contact.php" name="contact-form" id="contact-form">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="name">Nombre</label>
-                                            <input name="name" id="name" type="text" class="form-control" placeholder="Ingresa tu nombre...">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label for="email">Direccion Email</label>
-                                            <input name="email" id="email" type="email" class="form-control" placeholder="Ingresa tu correo...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end row -->
-
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label for="subject">Asunto</label>
-                                            <input name="subject" id="subject" type="text" class="form-control" placeholder="Ingresar Asunto...">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end row -->
-
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="form-group">
-                                            <label for="comments">Mensaje</label>
-                                            <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Ingresa Tu Mensaje..."></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- end row -->
-
-                                <div class="row">
-                                    <div class="col-lg-12 text-right">
-                                        <input type="submit" id="submit" name="send" class="submitBnt btn btn-danger" value="Enviar Mensaje">
-                                        <div id="simple-msg"></div>
-                                    </div>
-                                </div>
-                                <!-- end row -->
-                            </form>
-                        </div>
-                        <!-- end custom-form -->
-                    </div>
-                    <!-- end col -->
-                </div>
-                <!-- end row -->
-            </div>
-            <!-- end container-fluid -->
-        </section>
-        <!-- contact end -->
-    
-
-    <section class="section bg-gradient">
-        <div class="container-fluid">
+        <div class="col-sm-12 col-md-3 collapse show" id="left-panel">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="subj-group-tab" data-toggle="tab" href="#subj-group" role="tab" aria-controls="subj-group" aria-selected="true">Buscador</a>
+                </li>
+              
+            </ul>
+            <div class="tab-content" id="myTabContent2">
+                <div class="tab-pane fade show active" id="subj-group" role="tabpanel" aria-labelledby="subj-group-tab">
+                    <form class="form" method="GET" action="/update">
+                        {{ csrf_field() }}
+                        <br>
+                        {!! Form::select('eve', $nom_eve, null, ['class' => 'cities']) !!}
+                        
+                        
+                        <button type="submit" class="btn btn-outline-danger mb-2 mr-1"> Agregar </button>
+                        
+                    </form>  
+                </div>    
+                <div class="tab-pane fade" id="only-sub" role="tabpanel" aria-labelledby="only-sub-tab">
+                    <form class="form" method="GET" action="/">
+                        {{ csrf_field() }}
+                        <input type="text" class="form-control mb-2" placeholder="E2" name="key">
+                        <button type="submit" class="btn btn-outline-danger mb-2 mr-1"> Buscar </button>
+                    </form>  
+                </div> 
+            </div>            
         </div>
-    </section>
 
+        <div class="col-sm-12 col-md-9" id="myContent">
 
-        <!-- Back to top -->    
-        <a href="#" class="back-to-top" id="back-to-top"> <i class="mdi mdi-chevron-up"> </i> </a>
-
-        <!-- javascript -->
-        <script src="{{ URL::asset('assets/landing/js/jquery.min.js')}}"></script>
-        <script src="{{ URL::asset('assets/landing/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{ URL::asset('assets/landing/js/jquery.easing.min.js')}}"></script>
-        <script src="{{ URL::asset('assets/landing/js/scrollspy.min.js')}}"></script>
-
-        <!-- custom js -->
-        <script src="{{ URL::asset('assets/landing/js/app.js')}}"></script>
-    </body>
-</html>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="list-sub-tab" data-toggle="tab" href="#list-sub" role="tab" aria-controls="list-sub" aria-selected="true">Buscar Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="horario-tab" data-toggle="tab" href="#horario" role="tab" aria-controls="horario" aria-selected="false">Horario</a>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active table-responsive" id="list-sub" role="tabpanel" aria-labelledby="list-sub-tab">
+                @isset($subjects)
+                    <table class="table table-striped" id="myTable-info">
+                        <thead>
+                            <tr>
+                                <th>Clave</th>
+                                <th>Grupo</th>
+                                <th>Evento</th>
+                                <th>Host</th>
+                                <th>Horario</th>
+                                <th>Días</th>
+                                <!--th>Cupo</th-->
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($subjects as $subject)
+                            <tr>
+                                <td>{{ $subject['key'] }}</td>
+                                <td>{{ $subject['gpo'] }}</td>
+                                <td>{{ $subject['name'] }}</td>
+                                <td>{{ $subject['profesor'] }}</td>
+                                <td>{{ $subject['horario'] }}</td>
+                                <td>{{ $subject['dias'] }}</td>
+                                <!--td></td-->
+                                <td>
+                                    <a class="btn btn-success mb-2" href="/" role="button">Cambiar</a>
+                                </td>
+                                <td>
+                                <a class="btn btn-danger mb-2" href="/flush/{{ $subject['key'] }}" role="button"> Remover </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                        
+                    @else
+                    <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4">¡Bienvenido!</h1>
+                        <p class="lead">Agrega eventos en el panel que aparece a tu izquierda.</p>
+                    </div>
+                    </div> 
+                    @endif              
+                
+                </div>
+                <div class="tab-pane fade table-responsive" id="horario" role="tabpanel" aria-labelledby="horario-tab">
+                </div>
+            </div>    
+        </div>      
+    </div>
+</div>
+<!-- /.container -->
+@endsection
