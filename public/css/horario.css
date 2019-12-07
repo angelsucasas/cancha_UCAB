@@ -1,0 +1,31 @@
+html{
+  min-height: 100%;
+  position: relative;
+}
+body {
+   margin-bottom: 150px;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+}
+
+#mytable >tbody>tr>td{
+  height:6px;
+  padding:0px;
+  border-top: 0px;
+  font-size: 10px
+}
+
+#mytable >tbody>tr>th{
+  height:6px;
+  padding:0px;
+  border-top: 0px;
+  font-size: 8px
+}
+
+.card{
+  margin-bottom: 10px;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CobroEntrada</title>
+    <!-- Bootstrap CSS -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <!-- Logo de la pagina -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a href="#" class="navbar-brand">
+            <img src="img/ARTESANALES_opt.png" width="50" height="50" class="d-inline-block align-top" alt="">
+            <a class="navbar-brand text-white text-center" href="#">
+                <span>
+                    <h5>ACAVUCAB</h5>
+                </span>
+            </a>
+        </a>
+
+        <!-- Navbar -->
+        <div class="collapse navbar-collapse">
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Misión</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">¿Quiénes somos?</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Cliente</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/Carrito.html"><img src="img/carrito.png" width="30" height="30"
+                            class="d-inline-block align-top" alt="">
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Titulo -->
+    <div class="container mt-3 py-3">
+        <br><br><br>
+        <h1 class="text-center">Cobro de Entrada</h1>
+    </div>
+
+    <!-- Contenido -->
+
+    <div class="container">
+        <form action="#" class="w-75 mx-auto">
+            <div class="form-group  row">
+                <label for="NumTarjeta">Numero de tarjeta</label>
+                <input type="text" class="form-control" id="NumTarjeta" placeholder="Introduzca número de tarjeta">
+                <label for="nombreTarjeta" class="mt-4"> Nombre de titular</label>
+                <input type="text" class="form-control" id="nombreTarjeta" placeholder="Nombre de titular">
+            </div>
+
+            <div class="form-group row mt-4">
+                <div class="d-flex flex-row w-100">
+                    <div class="d-flex flex-row">
+                        <input type="number" class="form-control" style="width: 80px;" id="Mes" placeholder="Mes"
+                            min="01" max="12" required>
+                        <h3 class="mx-2">/</h3>
+                        <input type="number" class="form-control" style="width: 100px;" id="año" placeholder="Año"
+                            min="2019" required>
+                        <h3 class="mx-3 ">-</h3>
+                        <input type="password" class="form-control" style="width: 90px;" id="cvv" placeholder="CVV"
+                            maxlength="3" required>
+                    </div>
+
+
+                    <div class="d-flex flex-row w-100 justify-content-around "
+                        style="max-width: 250px; margin-left: 8%;">
+                        <img src="img/maestro.png" class="" style="width: 50px; " />
+                        <img src="img/visa.png" class="" style="width: 50px;" />
+                        <img src="img/credito.png" class="" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row w-50 mx-auto mt-5">
+                <input type="submit" class="btn btn-warning btn-lg" value="Procesar venta" />
+            </div>
+        </form>
+
+        <div class="d-flex flex-row w-100 mt-5 ml-5">
+            <div class="d-flex flex-column w-50">
+                <h4>1 entrada x 1000 Bs = 1000 Bs</h4>
+                <h4>IVA = 160 Bs</h4>
+                <div id="separador" class="bg-dark mb-2" style="height: 1px;"></div>
+                <h4>TOTAL=1160</h4>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!--
+
+            
+            <select class="form-control" id="mes" style="width: 100px;" required>
+                <option value="null" selected disabled>MM</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
+
+-->
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery-3.3.1.js"></script>
+</body>
+
+</html>
