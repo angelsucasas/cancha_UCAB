@@ -7,9 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-##Descripción
+## Descripción
 
-    Aplicación creada para el concurso de "reto al ingenio 2017", buscaba atender las necesidades del deporte en la UCAB, ya que no existe ningun aplicativo para socializar con tema de deporte en la universidad, se queria un aplicativo donde:
+    Aplicación creada para el concurso de "reto al ingenio 2017", buscaba atender las necesidades del deporte en la UCAB,
+    ya que no existe ningun aplicativo para socializar con tema de deporte en la universidad, se queria un aplicativo donde:
     *Se pudieran crear equipos(independiente del deporte), 
     *Otros usuarios pudieran ver los equipos registrados, y en caso de que un equipo le falten integrantes, hacer una solicitud de unirse.
     *El usuario pueda registrarse y "pagar" la mensualidad del gimnasio (el pago no fue implementado, solo simulado).
@@ -27,7 +28,7 @@ En el siguiente link se encuentra el aplicativo desplegado: http://whispering-re
     usuario: prueba@gmail.com
     contraseña: 123
     
-#Reporte de incidencias
+## Reporte de incidencias
 
 Cualquier incidencia que encuentres me la puedes dejar por "Issues"
 
