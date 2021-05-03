@@ -9,7 +9,8 @@
 
 ## Descripción
 
-Aplicación creada para el concurso de "reto al ingenio 2019", buscaba atender las necesidades del deporte en la UCAB,
+Aplicación creada para el concurso de "reto al ingenio 2019", el consurso consistia en realizar una aplicación en un mes,
+esta aplicación tenia que atender las necesidades del deporte en la UCAB,
 ya que no existe ningun aplicativo para socializar con tema de deporte en la universidad, se queria un aplicativo donde:<br>
     *Se pudieran crear equipos(independiente del deporte), <br>
     *Otros usuarios pudieran ver los equipos registrados. <br>
@@ -36,4 +37,11 @@ En el siguiente link se encuentra el aplicativo desplegado: http://whispering-re
 ## Reporte de incidencias
 
 Cualquier incidencia que encuentres me la puedes dejar por "Issues"
+
+## Fotos de la presentación en la UCAB
+(Hubo un problema con el videobin y tuve que presentar desde la maquina)
+![presentación reto al  ingenia 2019](https://user-images.githubusercontent.com/44983658/116905477-08601900-ac0d-11eb-8ec5-eedee015f7b9.png)
+
+![foto con el directo de informatica](https://user-images.githubusercontent.com/44983658/116905478-08601900-ac0d-11eb-93d8-bf0c9dae3f33.jpg)
+
 
