@@ -28,10 +28,10 @@ En el siguiente link se encuentra el aplicativo desplegado: http://whispering-re
 
 ## Usuario de muestra
 
-03/05/2021-Primer despliegue: Actualmente hay un tema con la versión de composer y heroku, por lo que da un error al registrar. Falta actualizar PHP a 7.4.1 (version actual 7.1.3).
-    Por lo tanto si desean ver el aplicativo pueden usar el siguiente usuario:
-    usuario: prueba@gmail.com
-    contraseña: 123
+03/05/2021-Primer despliegue: Actualmente hay un tema con la versión de composer y heroku, por lo que da un error al registrar. Falta actualizar PHP a 7.4.1 (version actual 7.1.3).<br>
+    Por lo tanto si desean ver el aplicativo pueden usar el siguiente usuario:<br>
+    usuario: prueba@gmail.com<br>
+    contraseña: 123<br>
     
 ## Reporte de incidencias
 
