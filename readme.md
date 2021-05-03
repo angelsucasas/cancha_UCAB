@@ -17,6 +17,7 @@ Se pudieran crear equipos(independiente del deporte),
     *El usuario pueda registrarse y "pagar" la mensualidad del gimnasio (el pago no fue implementado, solo simulado).*
     *El usuario pueda crear torneos, eventos (Rey de la colina- hacer fila para jugar).*
     *Ver los clacificatorias, donde los resultados de las clacificatorias se tomaria de los eventos*
+<br>
 la aplicación quedo de segundo lugar, por los colores tan fuertes en las vistas 
 (ejemplo: hay una tabla roja que pega en la vista).
 
