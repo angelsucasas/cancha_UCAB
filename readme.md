@@ -9,14 +9,17 @@
 
 ## Descripción
 
-    Aplicación creada para el concurso de "reto al ingenio 2017", buscaba atender las necesidades del deporte en la UCAB,
-    ya que no existe ningun aplicativo para socializar con tema de deporte en la universidad, se queria un aplicativo donde:
-    *Se pudieran crear equipos(independiente del deporte), 
-    *Otros usuarios pudieran ver los equipos registrados, y en caso de que un equipo le falten integrantes, hacer una solicitud de unirse.
-    *El usuario pueda registrarse y "pagar" la mensualidad del gimnasio (el pago no fue implementado, solo simulado).
-    *El usuario pueda crear torneos, eventos (Rey de la colina- hacer fila para jugar).
-    *Ver los clacificatorias, donde los resultados de las clacificatorias se tomaria de los eventos
-la aplicación quedo de segundo lugar, por los colores tan fuertes en las vistas (ejemplo: hay una tabla roja que pega en la vista).
+Aplicación creada para el concurso de "reto al ingenio 2019", buscaba atender las necesidades del deporte en la UCAB,
+ya que no existe ningun aplicativo para socializar con tema de deporte en la universidad, se queria un aplicativo donde:
+Se pudieran crear equipos(independiente del deporte), 
+    *Otros usuarios pudieran ver los equipos registrados, *
+    *y en caso de que un equipo le falten integrantes, hacer una solicitud de unirse.*
+    *El usuario pueda registrarse y "pagar" la mensualidad del gimnasio (el pago no fue implementado, solo simulado).*
+    *El usuario pueda crear torneos, eventos (Rey de la colina- hacer fila para jugar).*
+    *Ver los clacificatorias, donde los resultados de las clacificatorias se tomaria de los eventos*
+la aplicación quedo de segundo lugar, por los colores tan fuertes en las vistas 
+(ejemplo: hay una tabla roja que pega en la vista).
+
 ## Versión desplegada
 
 En el siguiente link se encuentra el aplicativo desplegado: http://whispering-reaches-59092.herokuapp.com/home , el aplicativo usa varias imagenes, asi que tal vez tarde en cargar dependiendo de tu conexión a internet.
